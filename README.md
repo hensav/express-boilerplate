@@ -53,3 +53,29 @@ Esimeses cmds käivita MongoDB
 Loo uus andmebaas
 
 `use *andmebaasi nimi*`
+
+
+## Mongodb liidestamine
+
+`db.js` faili lisada
+
+```
+const mongoose = require('mongoose')
+
+mongoose.Promise = global.Promise
+
+mongoose.set('debug', true)
+
+module.exports = mongoose.connect(process.env.MONGODB_URI_DEVELOPMENT)
+
+```
+
+`server.js `faili lisada
+
+`const databaseConnection = require('./db')`
+
+## Mongo mudeli loomine
+
+```
+
+```
