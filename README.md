@@ -77,5 +77,22 @@ module.exports = mongoose.connect(process.env.MONGODB_URI_DEVELOPMENT)
 ## Mongo mudeli loomine
 
 ```
+const mongoose = require('mongoose')
+const schema = mongoose.Schema({
+    name: String
+    },
+  {
+    timestamps: true
+  })
 
+module.exports = mongoose.model('todos', schema)
+
+```
+
+## Lisame routed
+
+```
+router.get('/list', asyncMiddleware(todo.list))
+router.post('/addTodo', asyncMiddleware(todo.addTodo))
+router.get('/removeTodo', asyncMiddleware(todo.removeTodo))
 ```
